@@ -31,13 +31,13 @@ while True:
 
     new_head = [snake [0][0], snake[0][1]]
 
-   if key == curses.key_DOWN:
+   if key == curses.KEY_DOWN:
        new_head[0] += 1:
-   if key == curses.key_UP:
+   if key == curses.KEY_UP:
        new_head[0] -= 1
-   if key  == curses.key_LEFT:
+   if key  == curses.KEY_LEFT:
        new_head[1] -= 1
-   if key == curses.key_RIGHT:
+   if key == curses.KEY_RIGHT:
        new_head[1] += 1
 
     snake.insert(0, new_head)
