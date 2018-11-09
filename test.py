@@ -11,3 +11,14 @@ v = 50
 width = 40
 height = 60
 vel = 5
+
+run = True
+while run:
+    pygame.time.delay(100)
+    for event in pygame.event.get():
+        print(event)
+        if event.type == pygame.QUIT:
+            run = False
+pygame.display.update()
+pygame.quit()
+quit()
