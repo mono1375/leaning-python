@@ -32,7 +32,7 @@ top_left_y = s_height - play_height
 
 # SHAPE FORMATS
 
-S = [[\'.....\',
+S = [[ '.....\',
       \'......\',
       \'..00..\',
       \'.00...\',
@@ -140,13 +140,29 @@ shape_colors = [(0, 255, 0), (255, 0, 0), (0, 255, 255), (255, 255, 0), (255, 16
 
 
 class Piece(object):
-    pass
+    def __init__(self, x, y, shapes):
+        self.x = x
+        self.y = y
+        self.shape = shape
+        self.color = colors[shape.index(shape)]
+        self.rotation = 0
 
-def create_grid(locked_positions={}):
-    pass
+
+def create_grid(locked_positions={}): # *
+    grid = [[(0,0,0)for _ in range(10)] for _ in range(20)]
+
+    for i in range (len(grid)):
+        for j in range(len(grid[i])):
+            if (j, i ) in locked_pos:
+                c = locked_pos[(j, i)]
+                grid[j] [i] = c
+    return grid
+
+
 
 def convert_shape_format(shape):
-    pass
+
+
 
 def valid_space(shape, grid):
     pass
@@ -155,14 +171,25 @@ def check_lost(positions):
     pass
 
 def get_shape():
-    pass
+    return random.choice(shape)
 
 
 def draw_text_middle(text, size, color, surface):
     pass
 
-def draw_grid(surface, row, col):
-    pass
+def draw_grid(surface, row, col, grid):
+    surface.fill((0,0,0))
+
+pygame.font.init()
+font = pygame.font.SysFont("comicsans", 60)
+label = font.render('tetres', 1,(255,255,255))
+surface.blit(label(top_left_x + play_width/2-(label.get_width()/2), 30))
+
+for i in range(len(grid)):
+    for j in range(len(grid[i])):
+        pygame.draw.rect(Surface, grid[i][j], (top_left_x + j*30, top_left_y + i*30))
+
+
 
 def clear_rows(grid, locked):
 
