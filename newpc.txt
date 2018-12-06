@@ -1,0 +1,4 @@
+Computer installmet:
+1:chocolatey: @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+2:pakeges: choco install adobereader googlechrome jre8 winrar notepadplusplus.install vlc git.install javaruntime  nodejs.install filezilla atom teamviewer  credist140 php anaconda3 vcredist2010 etfx-4.7.1-devpack vcredist2015 virtualbox vscode cygwin -y
+3:pakeges: choco install vcredist2013 sql-server-management-studio visualstudio2017enterprise pycharm-community github-desktop utorrent spotify steam googledrive android-sdk googlechrome.dev unity processing discord -y
