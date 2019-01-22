@@ -1,0 +1,5 @@
+.vscode
+env/
+vnev/
+*.env
+prodockey.vbs
